@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/960.css" />
+    <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){ 
+      $(".typeOfCare").hide();
+      $("label").inFieldLabels();
+      $(".radio").buttonset();
+      
+      $("#radio1").click(function() {
+      $(".typeOfCare").show("fast");
+      });
+
+      $("#radio2").click(function() {
+            $(".typeOfCare").hide("fast");
+      });
+
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container_16">
+      <div class="grid_16">
+        <div class="spaceOnTop">
+          <div class="companyTitle">RightCareSolutions.</div>
+          <div class="importantNote"><p>Note: This patient is a Readmission within the last 30 days</p></div>
+          <form class="ui-widget">
+            <fieldset>
+              <div class="radio">
+                <p>Did you receive post-acute care?</p>
+                <input type="radio" id="radio1" name="radio" /><label for="radio1">Yes</label>
+                <input type="radio" id="radio2" name="radio" /><label for="radio2">No</label>
+              </div>
+            </fieldset>
+          </form>
+          <form class="ui-widget typeOfCare">
+            <fieldset>
+              <div class="radio">
+                <p>If yes, what type of post-acute care?</p>
+                <input type="radio" id="radio3" name="radio" /><label for="radio3">SNF</label>
+                <input type="radio" id="radio4" name="radio" /><label for="radio4">Rehab</label>
+                <input type="radio" id="radio5" name="radio" /><label for="radio5">Home-Care</label>
+                <input type="radio" id="radio6" name="radio" /><label for="radio6">Nursing Home</label>
+              </div>
+            </fieldset>
+          </form>
+
+          <form class="ui-widget">
+            <fieldset>
+              <div class="radio">
+                <p>Why did you return to the hospital this time?</p>
+                <input type="radio" id="radio7" name="radio" /><label for="radio7">Symptoms got worse</label>
+                <input type="radio" id="radio8" name="radio" checked="checked" /><label for="radio8">Medication issues</label>
+                <input type="radio" id="radio9" name="radio" /><label for="radio9">Developed new symptoms</label>
+                <input type="radio" id="radio0" name="radio" /><label for="radio0">Came in for planned procedure</label>
+              </div>
+            </fieldset>
+          </form>
+
+          <a href="3.html"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only loginButton" role="button" aria-disabled="false"><span class="ui-button-text">NEXT</span></button></a>
+
+        </div><!-- loginPage -->
+      </div><!-- grid_16 -->
+    </div><!-- container 16 -->
+  </body>
+</html>

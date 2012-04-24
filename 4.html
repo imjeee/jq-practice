@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/960.css" />
+    <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){ 
+      $(".typeOfCare").hide();
+      $("label").inFieldLabels();
+      $(".radio").buttonset();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container_16">
+      <div class="grid_16">
+        <div class="spaceOnTop">
+          <div class="companyTitle">RightCareSolutions.</div>
+          <p class="question">If Cognitively Intact</p>
+          <form class="ui-widget">
+            <fieldset>
+              <p>Descrive your ability to walk</p>
+              <label style="display: block; width: 140px; height: 21px; " class="ui-state-default ui-corner-all">
+                <select class="ui-state-default ui-corner-all ui-helper-hidden"> 
+                  <option>Fresher</option>
+                  <option>&lt;1 year</option>
+                  <option>1-2 years</option>
+                  <option>2-3 years</option>
+                  <option>3-4 years</option>
+                  <option>4-5 years</option>
+                  <option>5-6 years</option>
+                </select>
+                <span id="labeltext" style="float:left;"></span>
+                <span style="float:right;display:inline-block" class="ui-icon ui-icon-triangle-1-s"></span>
+              </label>
+              <ul class=" ui-helper-reset ui-widget-content ui-helper-hidden" style="z-index: 50; width: 140px; position: absolute; display: none; ">
+                <li class="hover">Fresher</li>
+                <li class="hover">&lt;1 year</li>
+                <li class="hover">1-2 years</li>
+                <li class="hover">2-3 years</li>
+                <li class="hover">3-4 years</li>
+                <li class="hover">4-5 years</li>
+                <li class="hover">5-6 years</li>
+              </ul>
+              
+              <div class="radio">
+
+                <input type="radio" id="radio1" name="radio" /><label for="radio1">No restrictions</label><br/>
+                <input type="radio" id="radio2" name="radio" /><label for="radio2">Minor restrictions to changes</label><br/>
+                <input type="radio" id="radio3" name="radio" /><label for="radio3">Walks with the help of equipment</label><br/>
+                <input type="radio" id="radio4" name="radio" /><label for="radio4">Major restrictions/daily assistance from another person</label><br/>
+                <input type="radio" id="radio5" name="radio" /><label for="radio5">Does not walk or unable to take any steps at all</label>
+              </div>
+            </fieldset>
+          </form>
+
+          <a href="3.html"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only loginButton" role="button" aria-disabled="false"><span class="ui-button-text">NEXT</span></button></a>
+
+        </div><!-- loginPage -->
+      </div><!-- grid_16 -->
+    </div><!-- container 16 -->
+  </body>
+</html>
