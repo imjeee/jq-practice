@@ -9,54 +9,195 @@
     <script type="text/javascript" src="js/default.js"></script>
     <script type="text/javascript" charset="utf-8">
       $(function(){ 
-      $(".typeOfCare").hide();
-      $("label").inFieldLabels();
       $(".radio").buttonset();
       });
+      (function( $ ) {
+      $.widget( "ui.combobox", {
+      _create: function() {
+      var input,
+      self = this,
+      select = this.element.hide(),
+      selected = select.children( ":selected" ),
+      value = selected.val() ? selected.text() : "",
+      wrapper = $( "<span>" )
+        .addClass( "ui-combobox" )
+        .insertAfter( select );
+
+        input = $( "<input>" )
+        .appendTo( wrapper )
+        .val( value )
+        .addClass( "ui-state-default" )
+        .autocomplete({
+        delay: 0,
+        minLength: 0,
+        source: function( request, response ) {
+        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
+        response( select.children( "option" ).map(function() {
+        var text = $( this ).text();
+        if ( this.value && ( !request.term || matcher.test(text) ) )
+        return {
+        label: text.replace(
+        new RegExp(
+        "(?![^&;]+;)(?!<[^<>]*)(" +
+                                 $.ui.autocomplete.escapeRegex(request.term) +
+                                 ")(?![^<>]*>)(?![^&;]+;)", "gi"
+          ), "<strong>$1</strong>" ),
+          value: text,
+          option: this
+          };
+          }) );
+          },
+          select: function( event, ui ) {
+          ui.item.option.selected = true;
+          self._trigger( "selected", event, {
+          item: ui.item.option
+          });
+          },
+          change: function( event, ui ) {
+          if ( !ui.item ) {
+          var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( $(this).val() ) + "$", "i" ),
+          valid = false;
+          select.children( "option" ).each(function() {
+          if ( $( this ).text().match( matcher ) ) {
+          this.selected = valid = true;
+          return false;
+          }
+          });
+          if ( !valid ) {
+          // remove invalid value, as it didn't match anything
+          $( this ).val( "" );
+          select.val( "" );
+          input.data( "autocomplete" ).term = "";
+          return false;
+          }
+          }
+          }
+          })
+          .addClass( "ui-widget ui-widget-content ui-corner-left" );
+
+          input.data( "autocomplete" )._renderItem = function( ul, item ) {
+          return $( "<li></li>" )
+          .data( "item.autocomplete", item )
+          .append( "<a>" + item.label + "</a>" )
+          .appendTo( ul );
+          };
+
+          $( "<a>" )
+            .attr( "tabIndex", -1 )
+            .attr( "title", "Show All Items" )
+            .appendTo( wrapper )
+            .button({
+            icons: {
+            primary: "ui-icon-triangle-1-s"
+            },
+            text: false
+            })
+            .removeClass( "ui-corner-all" )
+            .addClass( "ui-corner-right ui-button-icon" )
+            .click(function() {
+            // close if already visible
+            if ( input.autocomplete( "widget" ).is( ":visible" ) ) {
+            input.autocomplete( "close" );
+            return;
+            }
+
+            // work around a bug (likely same cause as #5265)
+            $( this ).blur();
+
+            // pass empty string as value to search for, displaying all results
+            input.autocomplete( "search", "" );
+            input.focus();
+            });
+            },
+
+            destroy: function() {
+            this.wrapper.remove();
+            this.element.show();
+            $.Widget.prototype.destroy.call( this );
+            }
+            });
+            })( jQuery );
+
+            $(function() {
+            $( "#combobox" ).combobox();
+            $( "#toggle" ).click(function() {
+            $( "#combobox" ).toggle();
+            });
+            });
     </script>
+    <style>
+      .ui-combobox {
+      position: relative;
+      display: inline-block;
+      }
+    </style>
   </head>
   <body>
     <div class="container_16">
       <div class="grid_16">
         <div class="spaceOnTop">
           <div class="companyTitle">RightCareSolutions.</div>
-          <p class="question">If Cognitively Intact</p>
+          <p class="question pageSubTitle">If Cognitively Intact</p>
+          <br/>
+          <br/>
           <form class="ui-widget">
             <fieldset>
               <p>Descrive your ability to walk</p>
-              <label style="display: block; width: 140px; height: 21px; " class="ui-state-default ui-corner-all">
-                <select class="ui-state-default ui-corner-all ui-helper-hidden"> 
-                  <option>Fresher</option>
-                  <option>&lt;1 year</option>
-                  <option>1-2 years</option>
-                  <option>2-3 years</option>
-                  <option>3-4 years</option>
-                  <option>4-5 years</option>
-                  <option>5-6 years</option>
-                </select>
-                <span id="labeltext" style="float:left;"></span>
-                <span style="float:right;display:inline-block" class="ui-icon ui-icon-triangle-1-s"></span>
-              </label>
-              <ul class=" ui-helper-reset ui-widget-content ui-helper-hidden" style="z-index: 50; width: 140px; position: absolute; display: none; ">
-                <li class="hover">Fresher</li>
-                <li class="hover">&lt;1 year</li>
-                <li class="hover">1-2 years</li>
-                <li class="hover">2-3 years</li>
-                <li class="hover">3-4 years</li>
-                <li class="hover">4-5 years</li>
-                <li class="hover">5-6 years</li>
-              </ul>
-              
-              <div class="radio">
-
-                <input type="radio" id="radio1" name="radio" /><label for="radio1">No restrictions</label><br/>
-                <input type="radio" id="radio2" name="radio" /><label for="radio2">Minor restrictions to changes</label><br/>
-                <input type="radio" id="radio3" name="radio" /><label for="radio3">Walks with the help of equipment</label><br/>
-                <input type="radio" id="radio4" name="radio" /><label for="radio4">Major restrictions/daily assistance from another person</label><br/>
-                <input type="radio" id="radio5" name="radio" /><label for="radio5">Does not walk or unable to take any steps at all</label>
-              </div>
+              <select id="combobox">
+                <option value="no">No restrictions</option>
+                <option value="minor">Minor restrictions to changes</option>
+                <option value="walks">Walks with the help of equipment</option>
+                <option value="major">Major restrictions/daily assistance from another person</option>
+                <option value="does">Does not walk or unable to take any steps at all</option>
+              </select>
             </fieldset>
           </form>
+          <form>
+            <p>How would you rate your overall health at the present time?</p>
+            <fieldset>
+              <div class="radio">
+                <input type="radio" id="healthE" name="radio" /><label for="healthE">Excellent</label>
+                <input type="radio" id="healthG" name="radio" /><label for="healthG">Good</label>
+                <input type="radio" id="healthF" name="radio" /><label for="healthF">Fair</label>
+                <input type="radio" id="healthP" name="radio" /><label for="healthP">Poor</label></div></fieldset></form>
+
+          <form>
+            <fieldset>
+              <p>Length of Stay in the Hospital</p>
+              <div class="radio">
+                <input type="radio" id="stay07" name="radio" /><label for="stay07">0 - 7 days</label>
+                <input type="radio" id="stay8+" name="radio" /><label for="stay8+">8+ days</label></div></fieldset></form>
+
+          <form>
+            <fieldset>
+              <p>Age</p>
+              <div class="radio">
+                <input type="radio" id="age80" name="radio" /><label for="age80">Less than or equal to 80 years</label>
+                <input type="radio" id="age80+" name="radio" /><label for="age80+">More than 80 years</label></div></fieldset></form>
+
+          <form>
+            <fieldset>
+              <p>Number of comorbid conditions</p>
+              <div class="radio">
+                <input type="radio" id="comorbid01" name="radio" /><label for="comorbid01">0 - 1</label>
+                <input type="radio" id="comorbid23" name="radio" /><label for="comorbid23">2 - 3</label>
+                <input type="radio" id="comorbid4+" name="radio" /><label for="comorbid4+">4 or more</label></div></fieldset></form>
+
+          <form>
+            <fieldset>
+              <p>During the past month, have you often been bothered by feeling down, depressed, or hopeless?</p>
+              <div class="radio">
+                <input type="radio" id="hopelessYes" name="radio" /><label for="hopelessYes">Yes</label>
+                <input type="radio" id="hopelessNo" name="radio" /><label for="hopelessNo">No</label></div></fieldset></form>
+
+          <form>
+            <fieldset>
+              <p>During the past month, have you often been bothered by little interest or pleasure in doing things?</p>
+              <div class="radio">
+                <input type="radio" id="pleasureYes" name="radio" /><label for="pleasureYes">Yes</label>
+                <input type="radio" id="pleasureNo" name="radio" /><label for="pleasureNo">No</label></div></fieldset></form>
+
+
 
           <a href="3.html"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only loginButton" role="button" aria-disabled="false"><span class="ui-button-text">NEXT</span></button></a>
 

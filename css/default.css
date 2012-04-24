@@ -131,3 +131,11 @@ form fieldset p label {
   font-size: 30px;
   margin-bottom: 15px;
 }
+
+/* 4, 5.html */
+.pageSubTitle {
+  float: right;
+  position: relative;
+  top: -70px;
+  color: #bbb;
+}
