@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/960.css" />
+    <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+    <script>
+      // increase the default animation speed to exaggerate the effect
+      $.fx.speeds._default = 1000;
+      $(function() {
+      $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: "blind",
+      hide: "blind"
+      });
+
+      $( "#opener" ).click(function() {
+      $( "#dialog" ).dialog( "open" );
+      return false;
+      });
+      });
+    </script>
+  </head>
+  <body>
+
+    <div style="outline-width: 0px; outline-style: initial; outline-color: initial; height: auto; width: 300px; display: block; z-index: 1001; position: absolute; top: 250px; left: 487px; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog">
+      <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span class="ui-dialog-title" id="ui-dialog-title-dialog">Basic dialog</span>
+        <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
+          <span class="ui-icon ui-icon-closethick">close</span></a></div>
+      <div id="dialog" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 106px; height: auto; " scrolltop="0" scrollleft="0">
+        <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p></div>
+      <div class="ui-resizable-handle ui-resizable-n"></div>
+      <div class="ui-resizable-handle ui-resizable-e"></div>
+      <div class="ui-resizable-handle ui-resizable-s"></div>
+      <div class="ui-resizable-handle ui-resizable-w"></div>
+      <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div>
+      <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div>
+      <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div>
+      <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div>
+
+    <div class="container_16">
+      <div class="grid_16">
+        <div class="spaceOnTop">
+          <div class="companyTitle">RightCareSolutions.</div>
+          <div class="importantNote"><p>Note: High risk for Readmission. Referral Recommended</p></div>
+          <p>Steps to take:</p>
+          <p>Create pop-up alert of High Risk Status<br />
+            Create an alert (email, text, etc.) in Discharge Planner Portal<br />
+            Insert high-risk stamp on patient profile</p>
+        </div><!-- spaceOnTop -->
+      </div><!-- grid_16 -->
+    </div><!-- container 16 -->
+  </body>
+</html>

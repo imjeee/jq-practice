@@ -1,6 +1,6 @@
 html, body {
- font-family: Helvetica, Arial, sans-serif;
- font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
 }
 
 /* login page */
@@ -98,7 +98,6 @@ form fieldset p label {
 
   border-top: 2px solid #CCC;
   border-bottom: 2px solid #CCC;
-
 }
 
 .importantNote p {
@@ -138,4 +137,53 @@ form fieldset p label {
   position: relative;
   top: -70px;
   color: #bbb;
+}
+
+.ui-combobox {
+  position: relative;
+  display: inline-block;
+  margin: -10 0 0 0;
+}
+
+.ui-combobox input {
+  padding: 7 7 7 7;
+  width: 400px;
+}
+
+.dropdown .ui-button {
+  margin: 0 0 0 0;
+  padding: 11 3 11 3;
+  position: relative;
+  top: 12px;
+}
+.ui-autocomplete-input {
+  margin: 0;
+  padding: 0.3em;
+}
+
+.popUpNote {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.red {
+  background-image:url('images/exclamationSmall.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  padding: 0 0 0 35px;
+
+  letter-spacing: -.05em;
+  color: #DD2431;
+}
+
+.green {
+  background-image:url('images/checkSmall.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  padding: 0 0 0 35px;
+
+  letter-spacing: -.05em;
+  color: #5AAF3A;
 }
