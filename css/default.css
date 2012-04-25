@@ -148,6 +148,7 @@ form fieldset p label {
 .ui-combobox input {
   padding: 7 7 7 7;
   width: 400px;
+  height: 36px;
 }
 
 .dropdown .ui-button {
