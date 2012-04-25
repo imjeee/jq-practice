@@ -19,128 +19,15 @@
       $(".eval").click(function() {
       $("dialog:ui-dialog").dialog("destroy");
       $("#dialog-modal").dialog({ 
-      height: 300, 
+        height: 300, 
       modal: true,
       width: 600
       });
       });
 
       $(".radio").buttonset();
+      
       });
-
-      (function( $ ) {
-      $.widget( "ui.combobox", {
-      _create: function() {
-      var input,
-      self = this,
-      select = this.element.hide(),
-      selected = select.children( ":selected" ),
-      value = selected.val() ? selected.text() : "",
-      wrapper = $( "<span>" )
-        .addClass( "ui-combobox" )
-        .insertAfter( select );
-
-        input = $( "<input>" )
-        .appendTo( wrapper )
-        .val( value )
-        .addClass( "ui-state-default" )
-        .autocomplete({
-        delay: 0,
-        minLength: 0,
-        source: function( request, response ) {
-        var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
-        response( select.children( "option" ).map(function() {
-        var text = $( this ).text();
-        if ( this.value && ( !request.term || matcher.test(text) ) )
-        return {
-        label: text.replace(
-        new RegExp(
-        "(?![^&;]+;)(?!<[^<>]*)(" +
-                                 $.ui.autocomplete.escapeRegex(request.term) +
-                                 ")(?![^<>]*>)(?![^&;]+;)", "gi"
-          ), "<strong>$1</strong>" ),
-          value: text,
-          option: this
-          };
-          }) );
-          },
-          select: function( event, ui ) {
-          ui.item.option.selected = true;
-          self._trigger( "selected", event, {
-          item: ui.item.option
-          });
-          },
-          change: function( event, ui ) {
-          if ( !ui.item ) {
-          var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( $(this).val() ) + "$", "i" ),
-          valid = false;
-          select.children( "option" ).each(function() {
-          if ( $( this ).text().match( matcher ) ) {
-          this.selected = valid = true;
-          return false;
-          }
-          });
-          if ( !valid ) {
-          // remove invalid value, as it didn't match anything
-          $( this ).val( "" );
-          select.val( "" );
-          input.data( "autocomplete" ).term = "";
-          return false;
-          }
-          }
-          }
-          })
-          .addClass( "ui-widget ui-widget-content ui-corner-left" );
-
-          input.data( "autocomplete" )._renderItem = function( ul, item ) {
-          return $( "<li></li>" )
-          .data( "item.autocomplete", item )
-          .append( "<a>" + item.label + "</a>" )
-          .appendTo( ul );
-          };
-
-          $( "<a>" )
-            .attr( "tabIndex", -1 )
-            .attr( "title", "Show All Items" )
-            .appendTo( wrapper )
-            .button({
-            icons: {
-            primary: "ui-icon-triangle-1-s"
-            },
-            text: false
-            })
-            .removeClass( "ui-corner-all" )
-            .addClass( "ui-corner-right ui-button-icon" )
-            .click(function() {
-            // close if already visible
-            if ( input.autocomplete( "widget" ).is( ":visible" ) ) {
-            input.autocomplete( "close" );
-            return;
-            }
-
-            // work around a bug (likely same cause as #5265)
-            $( this ).blur();
-
-            // pass empty string as value to search for, displaying all results
-            input.autocomplete( "search", "" );
-            input.focus();
-            });
-            },
-
-            destroy: function() {
-            this.wrapper.remove();
-            this.element.show();
-            $.Widget.prototype.destroy.call( this );
-            }
-            });
-            })( jQuery );
-
-            $(function() {
-            $( "#combobox" ).combobox();
-            $( "#toggle" ).click(function() {
-            $( "#combobox" ).toggle();
-            });
-            });
     </script>
     <style>
     </style>
@@ -154,17 +41,15 @@
           <br/>
           <br/>
           <form>
-            <fieldset class="dropdown">
-              <p>Descrive your ability to walk</p>
-              <select id="combobox">
-                <option value="no">No restrictions</option>
-                <option value="minor">Minor restrictions to changes</option>
-                <option value="walks">Walks with the help of equipment</option>
-                <option value="major">Major restrictions/daily assistance from another person</option>
-                <option value="does">Does not walk or unable to take any steps at all</option>
-              </select>
-            </fieldset>
-          </form>
+            <p>Descrive your ability to walk</p>
+            <fieldset>
+              <div class="radio">
+                <input type="radio" id="walkNo" name="radio" /><label for="walkNo">No restrictions</label>
+                <input type="radio" id="walkMinor" name="radio" /><label for="walkMinor">Minor restrictions</label>
+                <input type="radio" id="walkWalks" name="radio" /><label for="walkWalks">Walks with the help of equipment</label>
+                <input type="radio" id="walkMajor" name="radio" /><label for="walkMajor">Daily assistance from another person needed</label>
+                <input type="radio" id="walkDoes" name="radio" /><label for="walkDoes">Unable to take any steps at all</label></div></fieldset></form>
+
           <form>
             <p>How would you rate your overall health at the present time?</p>
             <fieldset>

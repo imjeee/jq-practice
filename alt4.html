@@ -154,15 +154,17 @@
           <br/>
           <br/>
           <form>
-            <p>Descrive your ability to walk</p>
-            <fieldset>
-              <div class="radio">
-                <input type="radio" id="walkNo" name="radio" /><label for="walkNo">No restrictions</label>
-                <input type="radio" id="walkMinor" name="radio" /><label for="walkMinor">Minor restrictions to changes</label>
-                <input type="radio" id="walkWalks" name="radio" /><label for="walkWalks">Walks with the help of equipment</label>
-                <input type="radio" id="walkMajor" name="radio" /><label for="walkMajor">Major restrictions/daily assistance from another person</label>
-                <input type="radio" id="walkDoes" name="radio" /><label for="walkDoes">Does not walk or unable to take any steps at all</label></div></fieldset></form>
-
+            <fieldset class="dropdown">
+              <p>Descrive your ability to walk</p>
+              <select id="combobox">
+                <option value="no">No restrictions</option>
+                <option value="minor">Minor restrictions to changes</option>
+                <option value="walks">Walks with the help of equipment</option>
+                <option value="major">Major restrictions/daily assistance from another person</option>
+                <option value="does">Does not walk or unable to take any steps at all</option>
+              </select>
+            </fieldset>
+          </form>
           <form>
             <p>How would you rate your overall health at the present time?</p>
             <fieldset>
