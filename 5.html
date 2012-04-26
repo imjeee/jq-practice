@@ -1,119 +1,97 @@
 <!DOCTYPE html>
-  <head>
-    <link rel="stylesheet" href="css/default.css" />
-    <link rel="stylesheet" href="css/960.css" />
-    <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
-    <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
-    <script type="text/javascript" src="js/default.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      $(function(){ 
+<head>
+  <link rel="stylesheet" href="css/960.css" />
+  <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
+  <link rel="stylesheet" href="css/default.css" />
 
-      $(".ui-button").hover(
-      function(){ 
-      $(this).addClass("ui-state-hover"); },
-      function(){ $(this).removeClass("ui-state-hover");
-      });
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+  <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
+  <script type="text/javascript" src="js/default.js"></script>
+</head>
+<body>
+  <div class="container_16">
+    <div class="grid_16">
+      <div class="spaceOnTop">
+        <div class="companyTitle">RightCareSolutions.</div>
+        <p class="question pageSubTitle">If Cognitively Impaired</p>
+        <br/>
+        <br/>
+        <form>
+          <p>Descrive your ability to walk</p>
+          <fieldset>
+            <div class="radio">
+              <input type="radio" id="walkNo" name="radio" /><label for="walkNo">No restrictions</label>
+              <input type="radio" id="walkMinor" name="radio" /><label for="walkMinor">Minor restrictions</label>
+              <input type="radio" id="walkWalks" name="radio" /><label for="walkWalks">Walks with the help of equipment</label>
+              <input type="radio" id="walkMajor" name="radio" /><label for="walkMajor">Daily assistance from anothers needed</label>
+              <input type="radio" id="walkDoes" name="radio" /><label for="walkDoes">Unable to take any steps at all</label></div></fieldset></form>
 
-      $(".eval").click(function() {
-      $("dialog:ui-dialog").dialog("destroy");
-      $("#dialog-modal").dialog({ 
-      height: 300, 
-      modal: true,
-      width: 600
-      });
-      });
+        <form>
+          <p>How would you rate your overall health at the present time?</p>
+          <fieldset>
+            <div class="radio">
+              <input type="radio" id="healthE" name="radio" /><label for="healthE">Excellent</label>
+              <input type="radio" id="healthG" name="radio" /><label for="healthG">Good</label>
+              <input type="radio" id="healthF" name="radio" /><label for="healthF">Fair</label>
+              <input type="radio" id="healthP" name="radio" /><label for="healthP">Poor</label></div></fieldset></form>
 
-      $(".radio").buttonset();
-      });
-    </script>
-    <style>
-    </style>
-  </head>
-  <body>
-    <div class="container_16">
-      <div class="grid_16">
-        <div class="spaceOnTop">
-          <div class="companyTitle">RightCareSolutions.</div>
-          <p class="question pageSubTitle">If Cognitively Impaired</p>
-          <br/>
-          <br/>
-          <form>
-            <p>Descrive your ability to walk</p>
-            <fieldset>
-              <div class="radio">
-                <input type="radio" id="walkNo" name="radio" /><label for="walkNo">No restrictions</label>
-                <input type="radio" id="walkMinor" name="radio" /><label for="walkMinor">Minor restrictions</label>
-                <input type="radio" id="walkWalks" name="radio" /><label for="walkWalks">Walks with the help of equipment</label>
-                <input type="radio" id="walkMajor" name="radio" /><label for="walkMajor">Daily assistance from another person needed</label>
-                <input type="radio" id="walkDoes" name="radio" /><label for="walkDoes">Unable to take any steps at all</label></div></fieldset></form>
+        <form>
+          <fieldset>
+            <p>Length of Stay in the Hospital</p>
+            <div class="radio">
+              <input type="radio" id="stay07" name="radio" /><label for="stay07">0 - 7 days</label>
+              <input type="radio" id="stay8+" name="radio" /><label for="stay8+">8+ days</label></div></fieldset></form>
 
-          <form>
-            <p>How would you rate your overall health at the present time?</p>
-            <fieldset>
-              <div class="radio">
-                <input type="radio" id="healthE" name="radio" /><label for="healthE">Excellent</label>
-                <input type="radio" id="healthG" name="radio" /><label for="healthG">Good</label>
-                <input type="radio" id="healthF" name="radio" /><label for="healthF">Fair</label>
-                <input type="radio" id="healthP" name="radio" /><label for="healthP">Poor</label></div></fieldset></form>
+        <form>
+          <fieldset>
+            <p>How often would a person be available to care for the patient?</p>
+            <div class="radio">
+              <input type="radio" id="careNever" name="radio" /><label for="careNever">Never</label>
+              <input type="radio" id="careInfre" name="radio" /><label for="careInfre">Infrequently</label>
+              <input type="radio" id="careOcca" name="radio" /><label for="careOcca">Occasionally</label>
+              <input type="radio" id="careOften" name="radio" /><label for="careOften">Often</label>
+              <input type="radio" id="careWhene" name="radio" /><label for="careWhene">Whenever Needed</label></div></fieldset></form>
 
-          <form>
-            <fieldset>
-              <p>Length of Stay in the Hospital</p>
-              <div class="radio">
-                <input type="radio" id="stay07" name="radio" /><label for="stay07">0 - 7 days</label>
-                <input type="radio" id="stay8+" name="radio" /><label for="stay8+">8+ days</label></div></fieldset></form>
+        <form>
+          <fieldset>
+            <p>Number of comorbid conditions</p>
+            <div class="radio">
+              <input type="radio" id="comorbid01" name="radio" /><label for="comorbid01">0 - 1</label>
+              <input type="radio" id="comorbid23" name="radio" /><label for="comorbid23">2 - 3</label>
+              <input type="radio" id="comorbid4+" name="radio" /><label for="comorbid4+">4 or more</label></div></fieldset></form>
 
-          <form>
-            <fieldset>
-              <p>How often would a person be available to care for the patient?</p>
-              <div class="radio">
-                <input type="radio" id="careNever" name="radio" /><label for="careNever">Never</label>
-                <input type="radio" id="careInfre" name="radio" /><label for="careInfre">Infrequently</label>
-                <input type="radio" id="careOcca" name="radio" /><label for="careOcca">Occasionally</label>
-                <input type="radio" id="careOften" name="radio" /><label for="careOften">Often</label>
-                <input type="radio" id="careWhene" name="radio" /><label for="careWhene">Whenever Needed</label></div></fieldset></form>
+        <form>
+          <fieldset>
+            <p>Annual income of the patient</p>
+            <div class="radio">
+              <input type="radio" id="incomeLess" name="radio" /><label for="incomeLess">Less than $20,000</label>
+              <input type="radio" id="incomeMore" name="radio" /><label for="incomeMore">$20,000 or more</label></div></fieldset></form>
+        <br />
+        <hr />
+        <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary eval" role="button" aria-disabled="false">
+          <span class="ui-button-icon-primary ui-icon ui-icon-check"></span>
+          <span class="ui-button-text">Evaluate patient</span></button>
 
-          <form>
-            <fieldset>
-              <p>Number of comorbid conditions</p>
-              <div class="radio">
-                <input type="radio" id="comorbid01" name="radio" /><label for="comorbid01">0 - 1</label>
-                <input type="radio" id="comorbid23" name="radio" /><label for="comorbid23">2 - 3</label>
-                <input type="radio" id="comorbid4+" name="radio" /><label for="comorbid4+">4 or more</label></div></fieldset></form>
+        <div style="outline-width: 0px; outline-style: initial; outline-color: initial; height: auto; width: 300px; position: absolute; top: 255px; left: 487px; z-index: 1002; display: none; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog-modal">
+          <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+            <span class="ui-dialog-title" id="ui-dialog-title-dialog-modal">Result</span>
+            <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
+              <span class="ui-icon ui-icon-closethick">close</span></a></div>
+          <div id="dialog-modal" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 96px; " scrolltop="0" scrollleft="0">
+            <div class="popUpNote green"><p>Note: Low risk for Readmission. No referral needed</p></div>
+            <p>any additional messages to be displayed here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris mi, porttitor in varius a, ornare vel neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi ac erat ante. </p>
+          </div><div class="ui-resizable-handle ui-resizable-n"></div>
+          <div class="ui-resizable-handle ui-resizable-e"></div>
+          <div class="ui-resizable-handle ui-resizable-s"></div>
+          <div class="ui-resizable-handle ui-resizable-w"></div>
+          <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div>
+          <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div>
+          <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div>
+          <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div>
 
-          <form>
-            <fieldset>
-              <p>Annual income of the patient</p>
-              <div class="radio">
-                <input type="radio" id="incomeLess" name="radio" /><label for="incomeLess">Less than $20,000</label>
-                <input type="radio" id="incomeMore" name="radio" /><label for="incomeMore">$20,000 or more</label></div></fieldset></form>
-
-          <hr />
-          <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-primary eval" role="button" aria-disabled="false">
-              <span class="ui-button-icon-primary ui-icon ui-icon-check"></span>
-              <span class="ui-button-text">Evaluate patient</span></button>
-
-          <div style="outline-width: 0px; outline-style: initial; outline-color: initial; height: auto; width: 300px; position: absolute; top: 255px; left: 487px; z-index: 1002; display: none; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog-modal">
-            <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
-              <span class="ui-dialog-title" id="ui-dialog-title-dialog-modal">Result</span>
-              <a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button">
-                <span class="ui-icon ui-icon-closethick">close</span></a></div>
-            <div id="dialog-modal" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; height: 96px; " scrolltop="0" scrollleft="0">
-              <div class="popUpNote green"><p>Note: Low risk for Readmission. No referral needed</p></div>
-              <p>any additional messages to be displayed here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris mi, porttitor in varius a, ornare vel neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi ac erat ante. </p>
-            </div><div class="ui-resizable-handle ui-resizable-n"></div>
-            <div class="ui-resizable-handle ui-resizable-e"></div>
-            <div class="ui-resizable-handle ui-resizable-s"></div>
-            <div class="ui-resizable-handle ui-resizable-w"></div>
-            <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div>
-            <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div>
-            <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div>
-            <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div>
-
-        </div><!-- loginPage -->
-      </div><!-- grid_16 -->
-    </div><!-- container 16 -->
-  </body>
+      </div><!-- loginPage -->
+    </div><!-- grid_16 -->
+  </div><!-- container 16 -->
+</body>
 </html>

@@ -3,6 +3,13 @@ html, body {
   font-size: 14px;
 }
 
+hr {
+  height: 5px;
+  border: none;
+  background-color: #eee;
+  color: #eee;
+}
+
 /* login page */
 
 .companyTitle {
@@ -121,6 +128,11 @@ form fieldset p label {
   margin: 0 0 5 0;
   font-size: 17px;
   color: #555;
+}
+
+.typeOfCare p {
+  margin: 0 0 0 0;
+  padding: 0 0 10px 0; /* necessary so jquery ui slide out doesn't jump */
 }
 
 /* 3.html */

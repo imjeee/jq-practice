@@ -1,35 +1,13 @@
 <!DOCTYPE html>
   <head>
-    <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/960.css" />
     <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
+    <link rel="stylesheet" href="css/default.css" />
+
     <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
     <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
     <script type="text/javascript" src="js/default.js"></script>
-    <script type="text/javascript" charset="utf-8">
-      $(function(){ 
-      $(".typeOfCare").hide();
-      $("label").inFieldLabels();
-      $(".radio").buttonset();
-      
-      $("#radio1").click(function() {
-      $(".typeOfCare").show("fast");
-      });
-
-      $("#radio2").click(function() {
-            $(".typeOfCare").hide("fast");
-      });
-      
-      $(".ui-button").hover(
-      function(){ 
-      $(this).addClass("ui-state-hover"); },
-      function(){ $(this).removeClass("ui-state-hover");
-      });
-
-
-      });
-    </script>
   </head>
   <body>
     <div class="container_16">
@@ -51,9 +29,11 @@
                 <input type="radio" id="radio3" name="radio" /><label for="radio3">SNF</label>
                 <input type="radio" id="radio4" name="radio" /><label for="radio4">Rehab</label>
                 <input type="radio" id="radio5" name="radio" /><label for="radio5">Home-Care</label>
-                <input type="radio" id="radio6" name="radio" /><label for="radio6">Nursing Home</label></div></fieldset></form>
+                <input type="radio" id="radio6" name="radio" /><label for="radio6">Nursing Home</label></div>
+            </fieldset>
+          </form>
 
-          <form class="ui-widget">
+          <form class="ui-widget" style="padding: 1px 0px 0px 0px;">
             <fieldset>
               <div class="radio">
                 <p>Why did you return to the hospital this time?</p>
@@ -62,7 +42,7 @@
                 <input type="radio" id="radio9" name="radio" /><label for="radio9">Developed new symptoms</label>
                 <input type="radio" id="radio0" name="radio" /><label for="radio0">Came in for planned procedure</label></div></fieldset></form>
 
-
+          <hr />
             <button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only loginButton" role="button" aria-disabled="false" onClick="javascript:location.href = '3.html';">
               <span class="ui-button-text">NEXT</span></button>
 
