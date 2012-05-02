@@ -1,10 +1,18 @@
 $(function(){
 
-  $("label").inFieldLabels(); // 1.html specific
+  $( "button").button();
+  $(".radio").buttonset();
+  $("label").inFieldLabels();
+
+  $( ".resizable" ).resizable({
+    handles: "se"
+  });
+
+
 
   // 2.html specific
+  // 2.html did you receive post acute care?
   $(".typeOfCare").hide();
-  
   $("#radio1").click(function() {
     $(".typeOfCare").show("fast");
   });
@@ -13,22 +21,41 @@ $(function(){
     $(".typeOfCare").hide("fast");
   });
 
-  $(".radio").buttonset();
-
-  $(".ui-button").hover(
-    function(){ 
-      $(this).addClass("ui-state-hover"); },
-    function(){ $(this).removeClass("ui-state-hover");
-              });
-  
-  // 4, 5.html specific
-  $(".eval").click(function() {
-    $("dialog:ui-dialog").dialog("destroy");
-    $("#dialog-modal").dialog({ 
-      height: 300, 
-      modal: true,
-      width: 600
-    });
+  // 2.html why did you return to the hospital? other
+  $("#otherComment").hide();
+  $("#radio11").click(function() {
+    $("#otherComment").show("fast");
   });
+
+  for (var i = 7; i <= 10; i++){
+    $("#radio" + i).click(function() {
+      $("#otherComment").hide("fast");
+    });
+  }
+
+  $( "#birthdate" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+
+
+  // 4, 5.html
+  $( "#dialog" ).dialog({
+    height: 350, 
+    width: 730,
+    autoOpen: false,
+    modal: true,
+    buttons: {
+      Ok: function() {
+        $( this ).dialog( "close" );}}
+  });
+
+  $( "#opener" ).click(function() {
+    $( "#dialog" ).dialog( "open" );
+    return false;
+  });
+
+  // this needs to go below dialog, or it breaks dialog for some reason
+  $("#phone").mask("999 999 9999", {placeholder:" "});
 
 });
