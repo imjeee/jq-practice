@@ -1,5 +1,28 @@
 $(function(){
 
+ $("#next").click(function(){
+    if ($("#radio1").attr('checked') || $("#radio2").attr('checked')){
+      window.location.replace('3.html');
+    } else {
+      $("#radio1").parent().css('background-color', 'red');
+    }
+  });
+
+/*  
+  for (var i = 1; i <= 11; i++){
+    var radio = "#radio" + i;
+    $(radio).click(function() {
+      if (i >= 7 && i <= 10){
+
+      }
+      alert("hello");
+      //$(radio).parent().css('background-color', 'white');
+    });
+  }
+*/
+
+  //$("label[for='comedyclubs']")
+
   $( "button").button();
   $(".radio").buttonset();
   $("label").inFieldLabels();
