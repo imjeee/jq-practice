@@ -16,10 +16,13 @@ hr {
   font-size: 70px;
   font-weight: 600;
   letter-spacing: -.07em;
-  padding: 0 0 15px 0;
+  padding: 0 0 15px 90px;
   margin: 0 0 5px 0;
   color: #3FA9F5;
   border-bottom: 2px solid #ccc;
+  background-image:url('images/RCS.png');
+  background-repeat: no-repeat;
+  background-size: 80px 80px;
 }
 
 
@@ -29,10 +32,6 @@ hr {
   color: #777;
 }
 
-
-.loginPage {
-  margin: 100px 0 0 0;
-}
 
 .loginPage .login {
   margin-top:50px;
@@ -114,10 +113,6 @@ form fieldset p label {
 .radio {
   display: block;
   line-height: 1.4;
-}
-
-.spaceOnTop {
-  margin: 100px 0 0 0;
 }
 
 .spaceOnTop form {

@@ -2,7 +2,7 @@ $(function(){
 
  $("#next").click(function(){
     if ($("#radio1").attr('checked') || $("#radio2").attr('checked')){
-      window.location.replace('3.html');
+      window.location.replace('answerReliably.html');
     } else {
       $("#radio1").parent().css('background-color', 'red');
     }
@@ -70,7 +70,9 @@ $(function(){
     modal: true,
     buttons: {
       Ok: function() {
-        $( this ).dialog( "close" );}}
+        $( this ).dialog( "close" );
+        window.location = "login.html";
+      }}
   });
 
   $( "#opener" ).click(function() {

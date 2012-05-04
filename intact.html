@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="css/960.css" />
+  <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
+  <link rel="stylesheet" href="css/default.css" />
+
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.8.19.custom.min.js"></script>
+  <script type="text/javascript" src="js/jquery.infieldlabel.js"></script>
+  <script type="text/javascript" src="js/default.js"></script>
+</head>
+<body>
+  <div class="container_16">
+    <div class="grid_16">
+      <p class="question pageSubTitle">If Cognitively Intact</p>
+      <div class="companyTitle">RightCareSolutions.</div>
+      <br/>
+      <br/>
+      <form>
+        <p>Descrive your ability to walk</p>
+        <fieldset>
+          <div class="radio">
+            <input type="radio" id="walkNo" name="radio" /><label for="walkNo">No restrictions</label>
+            <input type="radio" id="walkMinor" name="radio" /><label for="walkMinor">Minor restrictions</label>
+            <input type="radio" id="walkWalks" name="radio" /><label for="walkWalks">Walks with the help of equipment</label>
+            <input type="radio" id="walkMajor" name="radio" /><label for="walkMajor">Daily assistance from anothers needed</label>
+            <input type="radio" id="walkDoes" name="radio" /><label for="walkDoes">Unable to take any steps at all</label></div></fieldset></form>
+
+      <form>
+        <p>How would you rate your overall health at the present time?</p>
+        <fieldset>
+          <div class="radio">
+            <input type="radio" id="healthE" name="radio" /><label for="healthE">Excellent</label>
+            <input type="radio" id="healthG" name="radio" /><label for="healthG">Good</label>
+            <input type="radio" id="healthF" name="radio" /><label for="healthF">Fair</label>
+            <input type="radio" id="healthP" name="radio" /><label for="healthP">Poor</label></div></fieldset></form>
+
+      <form>
+        <fieldset>
+          <p>Length of Stay in the Hospital</p>
+          <div class="radio">
+            <input type="radio" id="stay07" name="radio" /><label for="stay07">0 - 7 days</label>
+            <input type="radio" id="stay8+" name="radio" /><label for="stay8+">8+ days</label></div></fieldset></form>
+
+
+      <form>
+        <fieldset>
+          <p>Age</p>
+          <div class="radio">
+            <input type="radio" id="age80" name="radio" /><label for="age80">Less than or equal to 80 years</label>
+            <input type="radio" id="age80+" name="radio" /><label for="age80+">More than 80 years</label></div></fieldset></form>
+
+      <form>
+        <fieldset>
+          <p>Number of comorbid conditions</p>
+          <div class="radio">
+            <input type="radio" id="comorbid01" name="radio" /><label for="comorbid01">0 - 1</label>
+            <input type="radio" id="comorbid23" name="radio" /><label for="comorbid23">2 - 3</label>
+            <input type="radio" id="comorbid4+" name="radio" /><label for="comorbid4+">4 or more</label></div></fieldset></form>
+
+      <form>
+        <fieldset>
+          <p>During the past month, have you often been bothered by feeling down, depressed, or hopeless?</p>
+          <div class="radio">
+            <input type="radio" id="hopelessYes" name="radio" /><label for="hopelessYes">Yes</label>
+            <input type="radio" id="hopelessNo" name="radio" /><label for="hopelessNo">No</label></div></fieldset></form>
+
+      <form>
+        <fieldset>
+          <p>During the past month, have you often been bothered by little interest or pleasure in doing things?</p>
+          <div class="radio">
+            <input type="radio" id="pleasureYes" name="radio" /><label for="pleasureYes">Yes</label>
+            <input type="radio" id="pleasureNo" name="radio" /><label for="pleasureNo">No</label></div></fieldset></form>
+      <br />
+      <hr />
+      <button onClick="javascript:location.href = 'answerReliably.html';">BACK</button>
+      <button id="opener">Evaluate patient</button>
+
+      <div id="dialog" title="Result">
+        <div class="popUpNote red"><p>Note: High Risk for Readmission. Post-Acute Care Referral Recommended.</p></div><hr />
+        <p>Steps to take:</p>
+        <p>Create pop-up alert of High Risk Status<br />
+          Create an alert (email, text, etc.) in Discharge Planner Portal<br />
+          Insert high-risk stamp on patient profile</p>
+        <p>Thank you for completing the D&#178;S&#178; Discharge tool.</p>
+      </div>
+    </div>
+  </div><!-- grid_16 -->
+</div><!-- container 16 -->
+</body>
+</html>
