@@ -8,6 +8,11 @@ $(function(){
     }
   });
 
+  var title = $('title').text();
+  var percent = parseInt($("#percentComplete").html());
+  $( "#progressbar" ).progressbar({ value: percent });
+
+
 /*  
   for (var i = 1; i <= 11; i++){
     var radio = "#radio" + i;

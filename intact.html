@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <title>Intact</title>
   <link rel="stylesheet" href="css/960.css" />
   <link rel="stylesheet" href="css/jquery-ui-1.8.19.custom.css">
   <link rel="stylesheet" href="css/default.css" />
@@ -14,10 +15,11 @@
     <div class="grid_16">
       <p class="question pageSubTitle">If Cognitively Intact</p>
       <div class="companyTitle">RightCareSolutions.</div>
+      <div id="progressbar"></div>
       <br/>
       <br/>
       <form>
-        <p>Descrive your ability to walk</p>
+        <p>Describe patient's ability to walk</p>
         <fieldset>
           <div class="radio">
             <input type="radio" id="walkNo" name="radio" /><label for="walkNo">No restrictions</label>
@@ -27,7 +29,7 @@
             <input type="radio" id="walkDoes" name="radio" /><label for="walkDoes">Unable to take any steps at all</label></div></fieldset></form>
 
       <form>
-        <p>How would you rate your overall health at the present time?</p>
+        <p>How do you rate the patient's health at the present time</p>
         <fieldset>
           <div class="radio">
             <input type="radio" id="healthE" name="radio" /><label for="healthE">Excellent</label>
@@ -84,8 +86,8 @@
           Insert high-risk stamp on patient profile</p>
         <p>Thank you for completing the D&#178;S&#178; Discharge tool.</p>
       </div>
-    </div>
-  </div><!-- grid_16 -->
-</div><!-- container 16 -->
+    </div><!-- grid_16 -->
+  </div><!-- container 16 -->
+  <div id="percentComplete">80</div>
 </body>
 </html>
