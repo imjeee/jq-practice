@@ -4,22 +4,7 @@ $(function(){
   var percent = parseInt($("#percentComplete").html());
   $( "#progressbar" ).progressbar({ value: percent });
 
-/*  
-  for (var i = 1; i <= 11; i++){
-    var radio = "#radio" + i;
-    $(radio).click(function() {
-      if (i >= 7 && i <= 10){
-
-      }
-      alert("hello");
-      //$(radio).parent().css('background-color', 'white');
-    });
-  }
-*/
-
-  //$("label[for='comedyclubs']")
-
-  $( "button").button();
+  $("button").button();
   $(".radio").buttonset();
   $("label").inFieldLabels();
 
@@ -67,7 +52,7 @@ $(function(){
     buttons: {
       Ok: function() {
         $( this ).dialog( "close" );
-        window.location = "login.html";
+        window.location = "1.html";
       }}
   });
 
