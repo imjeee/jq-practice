@@ -1,43 +1,68 @@
 html, body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
-  padding: 50px 0 0 0;
+  padding: 50px 0 0 0; 
 }
 
 hr {
   height: 5px;
   border: none;
   background-color: #eee;
-  color: #eee;
-}
+  color: #eee; }
+  #next {
+    margin: 30px 0 5px 0;}
 
 .ui-progressbar {
-  margin: -10px 0 5px 0;  
-  height: 5px;
-}
-
-.ui-progressbar-value {
-  background-image:url('images/bar-background.png');
-}
+  padding: 0 0 0 0;
+  height: 5px;}
+  .ui-progressbar-value {
+    background-image:url('images/bar-background.png'); }
 
 #percentComplete {
   float: left;
-  visibility: hidden;
+  visibility: hidden; 
 }
 
-/* login page */
 
 .companyTitle {
   font-size: 70px;
   font-weight: 600;
   letter-spacing: -.07em;
-  padding: 0 0 15px 90px;
-  margin: 0 0 5px 0;
+  padding: 0 0 0 90px;
   color: #3FA9F5;
-  border-bottom: 2px solid #ccc;
+ 
+  width: 800px;
+  height: 85px;
+  
+
+  overflow: auto;
+  width: 100%;
+
   background-image:url('images/RCS.png');
   background-repeat: no-repeat;
-  background-size: 80px 80px;
+  background-size: 80px 80px; 
+}
+
+.pageSubTitle {
+  font-weight: bold;
+  font-size: 25px;
+
+  letter-spacing: -.05em;
+  color: #bbb;
+
+  margin: -20px 0 -5px 0;
+  padding: 0 0 0 0;
+
+  overflow: auto;
+  width: 100%;
+  
+  text-align: right;
+}
+
+.question {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 0 10px 0;
 }
 
 
@@ -45,21 +70,8 @@ hr {
   line-height: 1.3em;
   letter-spacing: .07em;
   color: #777;
-  margin: 0 0 40px 0;
+  margin: 5px 0 40px 0;
 }
-
-
-.loginPage .login {
-  margin-top:50px;
-}
-
-.login .loginButton {
-  margin: 10px 0 0 0;
-}
-
-form legend {}
-
-form {}
 
 fieldset {
   border: none;
@@ -67,107 +79,89 @@ fieldset {
   padding: 0;
 }
 
-form, form fieldset input, form fieldset textarea, form label {
-  font-family: Helvetica, Arial;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: bold;
-}
+form { margin: 0 0 30px 0; }
+  form legend {}
+  form, form fieldset input, form fieldset textarea, form label {
+    font-family: Helvetica, Arial;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;}
+  form p { 
+    position: relative; 
+    margin: 10px 0;
+    font-size: 17px;}
+  form p label { position: absolute; top: 0; left: 0;}
+  form p br {display: none;}
+  form fieldset p input, form fieldset p textarea {
+    display: block;
+    padding: 4px;
+    width: 300px;
+    margin: 0;}
+  form fieldset p label {
+    width: 380px;
+    display: block;
+    margin: 5px 5px 5px 6px;
+    padding: 0;}
+  form fieldset p textarea {
+    padding: 2px;
+    width: 404px;}
+  form fieldset p textarea, form fieldset p input {}
+  form fieldset p label {
+    color: #777;}
 
-form p { position: relative; margin: 10px 0;}
-form p label { position: absolute; top: 0; left: 0;}
-form p br {display: none;}
 
-
-form fieldset p input, form fieldset p textarea {
-  display: block;
-  padding: 4px;
-  width: 300px;
-  margin: 0;
-}
-
-form fieldset p label {
-  width: 380px;
-  display: block;
-  margin: 5px 5px 5px 6px;
-  padding: 0;
-}
-
-form fieldset p textarea {
-  padding: 2px;
-  width: 404px;
-}
-
-form fieldset p textarea, form fieldset p input {}
-
-form fieldset p label {
-  color: #777;
-}
-
-/* 2.html */
 .importantNote {
+  background-color: #DD2431;
   background-image:url('images/exclamation.png');
   background-repeat: no-repeat;
   background-position: left center;
 
   padding: 15px 0 15px 0;
-  margin: -7px 0 30px 0;
+  margin: 5px 0 30px 0;
+
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 
   letter-spacing: -.05em;
   font-size: 30px;
   font-weight: bold;
-  color: #DD2431;
-
-
-  border-bottom: 2px solid #CCC;
+  color: white;
 }
-
-.importantNote p {
-  margin: -4px 0 0 60px;
-}
+  .importantNote p {
+    margin: -2px 0 0 60px;
+  }
 
 .radio {
   display: block;
   line-height: 1.4;
 }
 
-.spaceOnTop form {
-  margin: 0 0 30px 0;
-}
-
-.spaceOnTop form p {
-  margin: 0 0 5 0;
-  font-size: 17px;
-  color: #555;
-}
 
 .typeOfCare {
   height: 150px;
-  padding: 0 0 20px 0;
-}
+  padding: 0 0 20px 0; }
 
-.typeOfCare p {
-  margin: 0 0 0 0;
-  padding: 0 0 10px 0; /* necessary so jquery ui slide out doesn't jump */
-}
+  .typeOfCare p {
+    margin: 0 0 0 0;
+    padding: 0 0 10px 0; /* necessary so jquery ui slide out doesn't jump */ }
 
-.comment textarea{
-  position: absolute;
-  z-index: 1;
+.comment {}
+  .comment textarea{
+    position: absolute;
+    z-index: 1;
+    
+    padding: 0px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
+    height: 100px;
+    width: 840px; }
+  
+  .comment label {
+    height: 20px;
+    float: left;
+    position: relative;
+    top: 10px;
+    z-index: 1; }
 
-  padding: 0px 0px 0px 0px;
-  margin: 10px 0px 0px 0px;
-  height: 100px;
-  width: 840px;
-}
-
-.comment label {
-  height: 20px;
-  float: left;
-  position: relative;
-  top: 10px;
-  z-index: 1;
-}
 
 #otherComment {
   height: 100px;
@@ -175,36 +169,16 @@ form fieldset p label {
   padding: 0 0 10px 0;
 }
 
-/* 3.html */
-.question {
-  letter-spacing: -0.05em;
-  font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 15px;
-}
-
-/* 4, 5.html */
-.pageSubTitle {
-  letter-spacing: -.05em;
-  font-size:28px;
-  float: left;
-  position: absolute;
-  top: 148px;
-  right:490px;
-  color: #bbb;
-}
-
 .ui-combobox {
   position: relative;
   display: inline-block;
   margin: -10px 0 0 0;
 }
-
-.ui-combobox input {
-  padding: 7 7 7 7;
-  width: 400px;
-  height: 30px;
-}
+  .ui-combobox input {
+    padding: 7 7 7 7;
+    width: 400px;
+    height: 30px;
+  }
 
 .popUpNote {
   font-size: 20px;
