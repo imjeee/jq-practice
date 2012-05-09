@@ -1,17 +1,8 @@
 $(function(){
 
- $("#next").click(function(){
-    if ($("#radio1").attr('checked') || $("#radio2").attr('checked')){
-      window.location.replace('answerReliably.html');
-    } else {
-      $("#radio1").parent().css('background-color', 'red');
-    }
-  });
-
   var title = $('title').text();
   var percent = parseInt($("#percentComplete").html());
   $( "#progressbar" ).progressbar({ value: percent });
-
 
 /*  
   for (var i = 1; i <= 11; i++){

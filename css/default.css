@@ -68,7 +68,6 @@ hr {
 
 .blurb {
   line-height: 1.3em;
-  letter-spacing: .07em;
   color: #777;
   margin: 5px 0 40px 0;
 }
@@ -79,7 +78,7 @@ fieldset {
   padding: 0;
 }
 
-form { margin: 0 0 30px 0; }
+form { margin: 0 0 20px 0; }
   form legend {}
   form, form fieldset input, form fieldset textarea, form label {
     font-family: Helvetica, Arial;
@@ -88,7 +87,7 @@ form { margin: 0 0 30px 0; }
     font-weight: bold;}
   form p { 
     position: relative; 
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 17px;}
   form p label { position: absolute; top: 0; left: 0;}
   form p br {display: none;}
